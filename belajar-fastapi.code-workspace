@@ -4,5 +4,7 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"python.pythonPath": "/Users/aansubarkah/opt/anaconda3/envs/belajar-fastapi/bin/python"
+	}
 }
