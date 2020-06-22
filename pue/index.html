@@ -5,6 +5,8 @@
 </head>
 
 <body>
+    <div id="app3">
+    </div>
     <div id="app">
         <h1 v-once>{{ title }}</h1>
         <input type="text" v-on:input="changeTitle">
@@ -12,7 +14,22 @@
         <hr>
         <p v-html="finishedLink"></p>
     </div>
+    <div id="app2">
+        <button v-on:click="increase">Click Me</button>
+        <button @click="increase(2, $event)">Click Me Again</button>
+        <p>{{ counter }}</p>
+        <p v-on:mousemove="updateCoordinates">
+            Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove="dummy">Dead Spot</span> - <span v-on:mousemove.stop="">DEAD SPOT TOO</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+    </div>
     <script>
+        new Vue({
+            el: '#app3',
+            data: {
+                name: 'John'
+            }
+        });
         new Vue({
             el: '#app',
             data: {
@@ -29,6 +46,30 @@
                 }
             }
         });
+
+        new Vue({
+            el: '#app2',
+            data: {
+                counter: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                increase: function(step, event) {
+                    this.counter += step;
+                },
+                updateCoordinates: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dummy: function(event) {
+                    event.stopPropagation();
+                },
+                alertMe: function() {
+                    alert('Alert!');
+                }
+            }
+        })
     </script>
 </body>
 
