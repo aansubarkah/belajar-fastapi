@@ -10,7 +10,7 @@
         <input type="text" v-on:input="changeTitle">
         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
         <hr>
-        <p>{{ finishedLink }}</p>
+        <p v-html="finishedLink"></p>
     </div>
     <script>
         new Vue({
