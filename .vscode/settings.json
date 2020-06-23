@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/aansubarkah/opt/anaconda3/envs/belajar-fastapi/bin/python",
+    "python.pythonPath": "C:\\Users\\aan.subarkah\\AppData\\Local\\Continuum\\anaconda3\\envs\\belajar-fastapi\\python.exe",
     "python.autoComplete.extraPaths": [
         "/Users/aansubarkah/belajar-fastapi"
     ],
